@@ -1,0 +1,32 @@
+﻿@model PROG6212_POEPART1.Models.Claim
+@{
+    ViewData["Title"] = "Claim";
+}
+
+<form asp-action="Claim" method="post">
+    <div class="form-group">
+        <label for="ClaimID">ClaimID</label>
+        <input type="text" class="form-control" asp-for="ClaimID" />
+    </div>
+
+    <div class="form-group">
+        <label for="LecturerID">LecturerID</label>
+        <input type="text" class="form-control" asp-for="LecturerID" />
+    </div>
+
+    <div class="form-group">
+        <label for="ClaimDate">ClaimDate</label>
+        <input type="text" class="form-control" asp-for="ClaimDate" />
+    </div>
+
+    <div class="form-group">
+        <label for="Amount">Amount</label>
+        <input type="text" class="form-control" asp-for="Amount" />
+    </div>
+
+    <div class="form-group">
+        <label for="Status">Status</label>
+        <input type="text" class="form-control" asp-for="Status" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

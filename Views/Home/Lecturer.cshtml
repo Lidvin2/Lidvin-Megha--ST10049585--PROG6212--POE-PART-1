@@ -1,0 +1,37 @@
+﻿@model PROG6212_POEPART1.Models.Lecturer
+@{
+    ViewData["Title"] = "Lecturer";
+}
+
+<h2>Lecturer for the clients</h2>
+<a class="btn btn-primary btn-sm" href="/Info/Lecturer">Lecturer</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>LecturerID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Department</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var lecturer in Model.lecturerInfos)
+    {
+        <tr>
+            <td>@lecturer.LecturerID</td>
+            <td>@lecturer.FirstName</td>
+            <td>@lecturer.LastName</td>
+            <td>@lecturer.Department</td>
+            <td>@lecturer.Email</td>
+            <td>
+                    <form asp-controller="Transaction" asp-action="PlaceOrder" method="post">
+                        <input type="hidden" name="userID" value="@uID" />
+                        <input type="hidden" name="productID" value="@product.ProductID" />
+                        <button type="submit">Place Order</button>
+                    </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
